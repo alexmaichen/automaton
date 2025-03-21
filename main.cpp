@@ -59,12 +59,7 @@ class Automaton{
 	
 				if(dynamic_cast<AliveCell*>(grid[y][x])){
 					if(aliveNeighbors < 2 || aliveNeighbors > 3){ // attempt to kill
-						if(grid[y][x]->health <= 1){
-							newGrid[y][x] = new EmptyCell();
-						}
-						else{
-							newGrid[y][x] = new AliveCell();
-						}
+						newGrid[y][x] = new EmptyCell();
 					}
 					else{ // keep alive
 						newGrid[y][x] = new AliveCell();
